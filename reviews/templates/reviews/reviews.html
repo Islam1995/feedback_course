@@ -1,6 +1,14 @@
-<form method="POST">
+<form action ="/" method="POST">
     {% csrf_token %}
-    <label for= "username">User name</label>
-    <input type= "text" id="username" name= "username">
+    {% comment %} {% if has_error %}
+    <p>This form is invalid - pease entered valid name </p>
+    {% endif %} {% endcomment %}
+   <!-- <label for= "username">User name</label>
+    <input type= "text" id="username" name= "username">-->
+    <div>
+    {{form.user_name.label_tag}}
+    {{form.user_name}}
+    {{form.user_name.errors}}
+    </div>
     <button> send </button>
 </form>
