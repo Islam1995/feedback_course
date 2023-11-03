@@ -6,9 +6,11 @@
    <!-- <label for= "username">User name</label>
     <input type= "text" id="username" name= "username">-->
     <div>
-    {{form.user_name.label_tag}}
-    {{form.user_name}}
-    {{form.user_name.errors}}
+        {% for field in form%}
+    <p>{{field.label_tag}}
+        {{field}}
+    <p>{{field.errors}}
+        {% endfor%}
     </div>
     <button> send </button>
 </form>
